@@ -1,0 +1,75 @@
+\documentclass[10pt, a4paper]{scrartcl}
+\usepackage{graphicx} % Required for inserting images
+
+\title{Comp Sci 5480 - Deep Learning: Assignment 1}
+\author{Aaron Dubale}
+\date{February 2026}
+
+\begin{document}
+
+\maketitle
+
+\section{Understanding Learning as Function Approximation}
+\subsection{Counting Model Capacity}
+Consider predicting house prices from square footage (\textit{x}). For each hypothesis class below, write the general form and count the number of parameters.
+\begin{itemize}
+\item \textbf{Linear functions:}
+
+    The general form of a linear function is
+    \[
+    f(x) = w_1 x + w_0
+    \]
+
+    This model has two parameters: the slope $w_1$ and the intercept $w_0$. Therefore, the linear hypothesis class has capacity 2.
+\item \textbf{Quadratic polynomials:}
+
+The general form of a quadratic polynomial is 
+    \[
+      f(x) = w_2x^2 + w_1x + w_0
+    \]
+    This model has three parameters: $w_2$, $w_1$, and $w_0$, so it has capacity 3.
+\item \textbf{Cubic polynomials:}
+
+  The general form of a cubic polynomial is
+    \[
+      f(x) = w_3x^3 + w_2x^2 + w_1x + w_0
+    \] 
+
+    This model has four parameters: $w_3$, $w_2$, $w_1$, and $w_0$. Therefore, the cubic polynomial class has capacity 4.
+\item \textbf{Two-layer neural network with 5 hidden units and ReLU activation:}
+
+  The hidden layer computes
+    \[
+      h_j = ReLU(w_jx + b_j), j=1,...,5
+    \] 
+
+    While the equation representing the output layer is:
+    \[
+      y = \sum_{j=1}^{5} v_j h_j + c
+    \]
+
+    The first layer has 5 weights and 5 biases, while the second layer has 5 weights and 1 bias.
+
+    Therefore, there are $10 + 6 = 16$ parameters. This gives it a model capacity of 16.
+\end{itemize}
+
+\subsection{Model Capacity and Real-World Constraints}
+\textbf{Scenario:}
+\subsection{Why Training Error Misleads You}
+
+\section{Loss Functions and Their Properties}
+\subsection{Computing Different Losses}
+\subsection{Outlier Sensitivity in Production Systems}
+\subsection{Why Gradient Descent Needs Smooth Losses}
+
+\section{Why Stacking Linear Layers Does Nothing}
+\subsection{Two Linear Layers}
+\subsection{With Nonlinearity}
+
+\section{Sigmoid and Tanh Equivalence}
+\subsection{Sigmoid in Exponential Form}
+\subsection{Scaling the Input}
+\subsection{Deriving the Tanh Relationship}
+\subsection{Neural Network Implications}
+\end{document}
+
